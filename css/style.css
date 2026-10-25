@@ -21,6 +21,7 @@
   --sky: #BCE0F7;
   --sky-deep: #6FB5E8;
   --rose: #FF7E99;
+  --rose-deep: #E85578;
 
   --radius-xl: 28px;
   --radius-lg: 20px;
@@ -287,6 +288,7 @@ main, header.site-head, footer { position: relative; z-index: 1; }
 .card-art.mint   { background: linear-gradient(140deg, var(--mint),   var(--mint-deep)); }
 .card-art.butter { background: linear-gradient(140deg, var(--butter), var(--butter-deep)); }
 .card-art.sky    { background: linear-gradient(140deg, var(--sky),    var(--sky-deep)); }
+.card-art.rose   { background: linear-gradient(140deg, var(--rose),   var(--rose-deep)); }
 
 .card-art::before { /* subtle shine sweep */
   content: "";

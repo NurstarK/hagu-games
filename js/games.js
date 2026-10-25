@@ -51,6 +51,18 @@ const HAGU_GAMES = [
     accent: "butter"
   },
   {
+    slug: "coloring-book",
+    title: "Coloring Book",
+    jp: "ぬりえブック",
+    blurb: "A cozy kawaii coloring book with mandalas, cute animals and relaxing sounds.",
+    tags: ["Cozy", "Coloring"],
+    url: "https://kodawari10.github.io/coloring-book-play/",
+    repo: "https://github.com/Kodawari10/coloring-book-play",
+    icon: "https://kodawari10.github.io/coloring-book-play/icons/icon-512.png",
+    maker: "Kodawari",
+    accent: "rose"
+  },
+  {
     slug: "tetropolis",
     title: "Tetropolis",
     jp: "テトロポリス",
