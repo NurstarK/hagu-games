@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Now playing — Hagu Gaming</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕹️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="player-body">
+  <header class="player-bar">
+    <a class="btn" href="./">← Lobby</a>
+    <div class="now-playing">
+      <span class="t" id="game-title">Loading…</span>
+      <span class="jp" id="game-jp"></span>
+    </div>
+    <div class="spacer"></div>
+    <button class="btn" id="btn-fullscreen" title="Fullscreen">⛶ Fullscreen</button>
+    <a class="btn ghost hide-sm" id="btn-newtab" href="#" target="_blank" rel="noopener" title="Open the game in its own tab">↗ Own tab</a>
+  </header>
+
+  <main class="player-stage">
+    <div class="player-frame-wrap" id="frame-wrap">
+      <iframe id="game-frame" allow="fullscreen; autoplay; gamepad" title="Game"></iframe>
+      <div class="player-loading" id="loading">
+        <span><span class="spin">🤗</span> warming up…</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/games.js"></script>
+  <script>
+    const slug = new URLSearchParams(location.search).get("g");
+    const game = haguGameBySlug(slug);
+
+    if (!game) {
+      // Unknown slug — bounce back to the lobby.
+      location.replace("./");
+    } else {
+      document.title = `${game.title} — Hagu Gaming`;
+      document.getElementById("game-title").textContent = game.title;
+      document.getElementById("game-jp").textContent = game.jp;
+      document.getElementById("btn-newtab").href = game.url;
+
+      const frame = document.getElementById("game-frame");
+      const loading = document.getElementById("loading");
+      frame.addEventListener("load", () => loading.classList.add("done"));
+      frame.src = game.url;
+
+      document.getElementById("btn-fullscreen").addEventListener("click", () => {
+        const wrap = document.getElementById("frame-wrap");
+        if (document.fullscreenElement) document.exitFullscreen();
+        else wrap.requestFullscreen?.();
+      });
+    }
+  </script>
+</body>
+</html>
