@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Now playing — Hagu Gaming</title>
+  <title>Now playing | Hagu Gaming</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕹️</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,10 +37,10 @@
     const game = haguGameBySlug(slug);
 
     if (!game) {
-      // Unknown slug — bounce back to the lobby.
+      // Unknown slug: bounce back to the lobby.
       location.replace("./");
     } else {
-      document.title = `${game.title} — Hagu Gaming`;
+      document.title = `${game.title} | Hagu Gaming`;
       document.getElementById("game-title").textContent = game.title;
       document.getElementById("game-jp").textContent = game.jp;
       document.getElementById("btn-newtab").href = game.url;

@@ -1,4 +1,4 @@
-// Hagu Gaming — game registry.
+// Hagu Gaming game registry.
 // Each entry embeds the game's live GitHub Pages build, so games update
 // automatically when their own repos ship.
 const HAGU_GAMES = [
@@ -6,7 +6,7 @@ const HAGU_GAMES = [
     slug: "element-friends",
     title: "Element Friends",
     jp: "エレメントフレンズ",
-    blurb: "A cozy alchemy of cuteness — combine element friends and discover brand-new friends.",
+    blurb: "A cozy alchemy of cuteness: combine element friends and discover brand-new friends.",
     tags: ["Cozy", "Merge"],
     url: "https://kodawari10.github.io/element-friends-play/",
     repo: "https://github.com/Kodawari10/element-friends-play",
@@ -30,7 +30,7 @@ const HAGU_GAMES = [
     slug: "kana-arcade",
     title: "Kana Arcade",
     jp: "かなアーケード",
-    blurb: "A cute arcade for learning Japanese kana — one glowing glyph at a time.",
+    blurb: "A cute arcade for learning Japanese kana, one glowing glyph at a time.",
     tags: ["Arcade", "Learn JP"],
     url: "https://kodawari10.github.io/kana-arcade-play/",
     repo: "https://github.com/Kodawari10/kana-arcade-play",
@@ -54,11 +54,11 @@ const HAGU_GAMES = [
     slug: "tetropolis",
     title: "Tetropolis",
     jp: "テトロポリス",
-    blurb: "Tetris where the blocks are cities — merge cities into countries, clear whole continents.",
+    blurb: "Tetris where the blocks are cities: merge cities into countries, clear whole continents.",
     tags: ["Puzzle", "Geography"],
     url: "https://nurstark.github.io/tetropolis/",
     repo: "https://github.com/NurstarK/tetropolis",
-    icon: null, // no icon asset — the card renders a city-tile emblem instead
+    icon: null, // no icon asset; the card renders a city-tile emblem instead
     emoji: "🏙️",
     maker: "Nurstar",
     accent: "sky"
