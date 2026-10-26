@@ -1,9 +1,9 @@
-# Hagu Fam 🤗
+# Hagu Gaming 🤗
 
 **Hagu** (ハグ) means **hug** in Japanese. This is our family arcade: a cozy
 hub where all of our browser games live, playable right on the page.
 
-**Play:** https://hagufam.com/
+**Play:** https://nurstark.github.io/hagu-gaming/
 
 ## The games
 

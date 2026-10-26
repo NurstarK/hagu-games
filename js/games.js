@@ -1,4 +1,4 @@
-// Hagu Fam game registry.
+// Hagu Gaming game registry.
 // Each entry embeds the game's live GitHub Pages build, so games update
 // automatically when their own repos ship.
 const HAGU_GAMES = [
