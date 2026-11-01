@@ -3,15 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hagu Games: cozy games made with hugs 🤗</title>
-  <meta name="description" content="Hagu Games is a cozy arcade of family-made browser games: Element Friends, Jewel Dress, Kana Arcade, Puppy Pals and Tetropolis. Free to play, right in your browser.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤗</text></svg>">
+  <title>Hagu Games: cozy games made with hugs</title>
+  <meta name="description" content="Hagu Games is a cozy arcade of family-made browser games: Element Friends, Jewel Dress, Kana Arcade, Puppy Pals, Coloring Book, Parrot Palm and Tetropolis. Free to play, right in your browser.">
+  <meta name="theme-color" content="#FFF6EA">
+  <link rel="canonical" href="https://hagugames.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hagu Games">
+  <meta property="og:title" content="Hagu Games: cozy games made with hugs">
+  <meta property="og:description" content="A tiny family arcade of cozy browser games. No downloads, no ads, just press play.">
+  <meta property="og:url" content="https://hagugames.com/">
+  <meta property="og:image" content="https://hagugames.com/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="img/logo.svg" as="image" type="image/svg+xml">
 </head>
 <body>
+  <a class="skip-link" href="#games">Skip to the games</a>
+
   <div class="blobs" aria-hidden="true">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
@@ -19,81 +39,100 @@
   </div>
 
   <header class="site-head">
-    <a class="wordmark" href="./">
-      <span class="jp">ハグ</span>
-      <span class="en">Hagu Games</span>
+    <a class="lockup" href="./" aria-label="Hagu Games home">
+      <img class="lockup-mark" src="img/logo.svg" alt="" width="48" height="48">
+      <span class="lockup-text">
+        <span class="lockup-jp" lang="ja">ハグ</span>
+        <span class="lockup-en">Hagu Games</span>
+      </span>
     </a>
-    <nav class="head-links">
+    <nav class="head-links" aria-label="Main">
       <a class="btn ghost hide-sm" href="#about">About</a>
-      <a class="btn primary" href="#games">Play&nbsp;now</a>
+      <a class="btn primary" href="#games">Play now</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <span class="mascot" aria-hidden="true">🤗</span>
-      <h1>Games made<br>with <span class="hug">hugs</span></h1>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-mark" src="img/logo.svg" alt="The Hagu mark: a heart-shaped game controller giving a hug" width="168" height="168">
+      <h1 id="hero-title">Games made<br>with <span class="hug">hugs</span></h1>
       <p class="tagline">
         A tiny family arcade of cozy browser games. No downloads, no ads,
-        just press play. Made with <span class="heart">♥</span> at the kitchen table.
+        just press play. Made at the kitchen table.
       </p>
     </section>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track" id="marquee-track">
-        <!-- filled by JS, duplicated for a seamless loop -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee">
+        <div class="marquee-track" id="marquee-track"></div>
       </div>
     </div>
 
-    <section class="shelf" id="games">
-      <h2 class="shelf-title">🕹️ The game shelf</h2>
-      <div class="grid" id="game-grid">
-        <!-- cards rendered by JS from js/games.js -->
+    <section class="shelf" id="games" aria-labelledby="shelf-title" tabindex="-1">
+      <div class="shelf-head">
+        <h2 class="shelf-title" id="shelf-title">The game shelf</h2>
+        <p class="shelf-count" id="shelf-count"></p>
       </div>
+      <ul class="grid" id="game-grid" role="list"></ul>
+      <noscript>
+        <p class="bubble noscript">The game shelf needs JavaScript to load. Turn it on and refresh to see the games.</p>
+      </noscript>
     </section>
 
-    <section class="about" id="about">
+    <section class="about" id="about" aria-label="About Hagu Games">
       <div class="bubble">
-        <strong>Hagu</strong> (ハグ) means <strong>hug</strong> in Japanese.
-        Every game here is handmade by our little family studio:
-        <strong>Kodawari</strong> crafts the cozy ones, <strong>Nurstar</strong>
-        builds the puzzly ones, and everything runs free in your browser. 🤗
+        <p>
+          <strong>Hagu</strong> (<span lang="ja">ハグ</span>) means <strong>hug</strong> in Japanese.
+          Every game here is handmade by our little family studio:
+          <strong>Kodawari</strong> crafts the cozy ones, <strong>Nurstar</strong>
+          builds the puzzly ones, and everything runs free in your browser.
+        </p>
       </div>
     </section>
   </main>
 
-  <footer>
-    Hagu Games · made with hugs · all games are open source on
-    <a href="https://github.com/NurstarK/hagu-games">GitHub</a>
+  <footer class="site-foot">
+    <img src="img/logo.svg" alt="" width="28" height="28" loading="lazy">
+    <p>Hagu Games is made with hugs. Every game is open source on
+      <a href="https://github.com/NurstarK/hagu-games">GitHub</a>.</p>
   </footer>
 
   <script src="js/games.js"></script>
   <script>
-    // Render game cards
-    const grid = document.getElementById("game-grid");
-    grid.innerHTML = HAGU_GAMES.map(g => `
-      <a class="card" href="play.html?g=${g.slug}" aria-label="Play ${g.title}">
-        <span class="maker-ribbon">by ${g.maker}</span>
-        <div class="card-art ${g.accent}">
-          ${g.icon
-            ? `<img src="${g.icon}" alt="" loading="lazy" width="96" height="96">`
-            : `<div class="emblem" aria-hidden="true">${g.emoji}</div>`}
-        </div>
-        <div class="card-head">
-          <span class="card-title">${g.title}</span>
-          <span class="card-jp">${g.jp}</span>
-        </div>
-        <p class="card-blurb">${g.blurb}</p>
-        <div class="card-foot">
-          <span class="tags">${g.tags.map(t => `<span class="tag">${t}</span>`).join("")}</span>
-          <span class="play-pill">Play ▸</span>
-        </div>
-      </a>
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+    // Render game cards from the registry
+    document.getElementById("game-grid").innerHTML = HAGU_GAMES.map(g => `
+      <li class="card-slot">
+        <a class="card accent-${esc(g.accent)}" href="play.html?g=${encodeURIComponent(g.slug)}">
+          <span class="maker-ribbon maker-${esc(g.maker.toLowerCase())}">by ${esc(g.maker)}</span>
+          <span class="card-art" aria-hidden="true">
+            ${g.icon
+              ? `<img src="${esc(g.icon)}" alt="" loading="lazy" decoding="async" width="120" height="120">`
+              : `<span class="emblem">${esc(g.emoji || "")}</span>`}
+          </span>
+          <span class="card-head">
+            <span class="card-title">${esc(g.title)}</span>
+            <span class="card-jp" lang="ja">${esc(g.jp)}</span>
+          </span>
+          <span class="card-blurb">${esc(g.blurb)}</span>
+          <span class="card-foot">
+            <span class="tags">${g.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</span>
+            <span class="play-pill">Play<span class="visually-hidden"> ${esc(g.title)}</span>
+              <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M3 1.8 10 6 3 10.2Z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+          </span>
+        </a>
+      </li>
     `).join("");
 
-    // Marquee: game titles on a loop (duplicated for seamless scroll)
-    const names = HAGU_GAMES.map(g => `<span>✦ ${g.title} ${g.jp}</span>`).join("");
-    document.getElementById("marquee-track").innerHTML = names + names + names + names;
+    const makers = [...new Set(HAGU_GAMES.map(g => g.maker))];
+    document.getElementById("shelf-count").textContent =
+      `${HAGU_GAMES.length} games by ${makers.join(" and ")}`;
+
+    // Marquee: game titles on a loop (two copies for a seamless scroll)
+    const names = HAGU_GAMES.map(g => `<span>${esc(g.title)} <span lang="ja">${esc(g.jp)}</span></span>`).join("");
+    document.getElementById("marquee-track").innerHTML = `<span class="run">${names}</span><span class="run">${names}</span>`;
   </script>
 </body>
 </html>
