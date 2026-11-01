@@ -63,6 +63,18 @@ const HAGU_GAMES = [
     accent: "rose"
   },
   {
+    slug: "parrot-palm",
+    title: "Parrot Palm",
+    jp: "パロットパーム",
+    blurb: "Feed your parrots palm seeds, collect rare map tiles and solve the treasure-map puzzle.",
+    tags: ["Collect", "Puzzle"],
+    url: "https://kodawari10.github.io/parrot-palm-play/",
+    repo: "https://github.com/Kodawari10/parrot-palm-play",
+    icon: "https://kodawari10.github.io/parrot-palm-play/icons/icon-512.png",
+    maker: "Kodawari",
+    accent: "mint"
+  },
+  {
     slug: "tetropolis",
     title: "Tetropolis",
     jp: "テトロポリス",
