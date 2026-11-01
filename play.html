@@ -2,31 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Now playing | Hagu Games</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕹️</text></svg>">
+  <meta name="theme-color" content="#FFEDD6">
+  <meta property="og:site_name" content="Hagu Games">
+  <meta property="og:image" content="https://hagugames.com/img/og.png">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="player-body">
   <header class="player-bar">
-    <a class="btn" href="./">← Lobby</a>
-    <div class="now-playing">
-      <span class="t" id="game-title">Loading…</span>
-      <span class="jp" id="game-jp"></span>
+    <a class="btn back-btn" href="./" aria-label="Back to the lobby">
+      <img src="img/logo.svg" alt="" width="26" height="26">
+      <svg class="ico" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="label">Lobby</span>
+    </a>
+
+    <h1 class="now-playing">
+      <span class="t" id="game-title">Loading</span>
+      <span class="sub"><span class="jp" lang="ja" id="game-jp"></span><span class="by" id="game-by"></span></span>
+    </h1>
+
+    <div class="player-actions">
+      <button class="btn" id="btn-fullscreen" type="button" aria-label="Fullscreen" hidden>
+        <svg class="ico" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path id="fs-path" d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="label" id="fs-label">Fullscreen</span>
+      </button>
+      <a class="btn ghost" id="btn-newtab" href="#" target="_blank" rel="noopener" aria-label="Open the game in its own tab">
+        <svg class="ico" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M9 2h5v5M14 2 7.5 8.5M12 10v3.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="label">Own tab</span>
+      </a>
     </div>
-    <div class="spacer"></div>
-    <button class="btn" id="btn-fullscreen" title="Fullscreen">⛶ Fullscreen</button>
-    <a class="btn ghost hide-sm" id="btn-newtab" href="#" target="_blank" rel="noopener" title="Open the game in its own tab">↗ Own tab</a>
   </header>
 
   <main class="player-stage">
     <div class="player-frame-wrap" id="frame-wrap">
-      <iframe id="game-frame" allow="fullscreen; autoplay; gamepad" title="Game"></iframe>
-      <div class="player-loading" id="loading">
-        <span><span class="spin">🤗</span> warming up…</span>
+      <iframe id="game-frame" allow="fullscreen; autoplay; gamepad" allowfullscreen title="Game"></iframe>
+      <div class="player-loading" id="loading" role="status">
+        <img class="loading-mark" src="img/logo.svg" alt="" width="88" height="88">
+        <p class="loading-text" id="loading-text">Warming up…</p>
+        <p class="loading-hint" id="loading-hint" hidden>
+          Taking a while? <a id="loading-newtab" href="#" target="_blank" rel="noopener">Open the game in its own tab</a>.
+        </p>
       </div>
     </div>
   </main>
@@ -43,18 +66,43 @@
       document.title = `${game.title} | Hagu Games`;
       document.getElementById("game-title").textContent = game.title;
       document.getElementById("game-jp").textContent = game.jp;
+      document.getElementById("game-by").textContent = `by ${game.maker}`;
       document.getElementById("btn-newtab").href = game.url;
+      document.getElementById("loading-newtab").href = game.url;
+      document.getElementById("loading-text").textContent = `Warming up ${game.title}…`;
 
       const frame = document.getElementById("game-frame");
       const loading = document.getElementById("loading");
-      frame.addEventListener("load", () => loading.classList.add("done"));
+      frame.title = game.title;
+      const hintTimer = setTimeout(() => {
+        document.getElementById("loading-hint").hidden = false;
+      }, 12000);
+      frame.addEventListener("load", () => {
+        clearTimeout(hintTimer);
+        loading.classList.add("done");
+        frame.focus();
+      });
       frame.src = game.url;
 
-      document.getElementById("btn-fullscreen").addEventListener("click", () => {
-        const wrap = document.getElementById("frame-wrap");
-        if (document.fullscreenElement) document.exitFullscreen();
-        else wrap.requestFullscreen?.();
-      });
+      // Fullscreen: only offer it where the browser supports it (not iPhone Safari).
+      const fsBtn = document.getElementById("btn-fullscreen");
+      const wrap = document.getElementById("frame-wrap");
+      if (document.fullscreenEnabled) {
+        fsBtn.hidden = false;
+        fsBtn.addEventListener("click", () => {
+          if (document.fullscreenElement) document.exitFullscreen();
+          else wrap.requestFullscreen().catch(() => {});
+        });
+        document.addEventListener("fullscreenchange", () => {
+          const on = !!document.fullscreenElement;
+          const label = on ? "Exit fullscreen" : "Fullscreen";
+          document.getElementById("fs-label").textContent = label;
+          fsBtn.setAttribute("aria-label", label);
+          document.getElementById("fs-path").setAttribute("d", on
+            ? "M6 2v4H2M14 6h-4V2M10 14v-4h4M2 10h4v4"
+            : "M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4");
+        });
+      }
     }
   </script>
 </body>
