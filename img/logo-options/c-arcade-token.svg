@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img"><title>Hagu — Arcade Token</title>
+<circle cx="69" cy="70" r="52" fill="#3D2C29"/>
+<circle cx="64" cy="64" r="52" fill="#FFE39A" stroke="#3D2C29" stroke-width="6"/>
+<circle cx="64" cy="64" r="40" fill="none" stroke="#F5B942" stroke-width="4" stroke-dasharray="6 7" stroke-linecap="round"/>
+<path d="M64 92C47 81 34 70 34 55c0-10 7-17 16-17 6 0 11 3 14 8 3-5 8-8 14-8 9 0 16 7 16 17 0 15-13 26-30 37Z" fill="#FF7E99" stroke="#3D2C29" stroke-width="5" stroke-linejoin="round"/>
+<g fill="#3D2C29"><circle cx="54" cy="58" r="3.8"/><circle cx="74" cy="58" r="3.8"/></g>
+<path d="M59 66q5 5 10 0" fill="none" stroke="#3D2C29" stroke-width="3.8" stroke-linecap="round"/>
+<g stroke="#3D2C29" stroke-width="3.5" fill="#FFB7A3"><ellipse cx="44" cy="74" rx="8" ry="6" transform="rotate(-35 44 74)"/><ellipse cx="84" cy="74" rx="8" ry="6" transform="rotate(35 84 74)"/></g>
+<path d="M30 40c4-8 11-14 20-16" fill="none" stroke="#FFFDF9" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+</svg>
