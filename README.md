@@ -26,6 +26,7 @@ whenever their own repos ship.
 - `index.html`: the lobby (game shelf)
 - `play.html?g=<slug>`: full-screen player for one game
 - `js/games.js`: the game registry; **add new games here**
+- `img/`: the Hagu logo (`logo.svg`, `logo-wordmark.svg`), favicons and OG image
 
 ## Adding a game
 
