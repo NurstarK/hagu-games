@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hagu logo options</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+body{margin:0;background:#FFF6EA;color:#3D2C29;font-family:"M PLUS Rounded 1c",system-ui,sans-serif;padding:32px 16px}
+h1{font-family:"Baloo 2",sans-serif;text-align:center;margin:0 0 4px}p.sub{text-align:center;margin:0 0 32px;color:#6B544F}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;max-width:1200px;margin:auto}
+.card{background:#FFFDF9;border:2.5px solid #3D2C29;border-radius:20px;box-shadow:5px 6px 0 #3D2C29;padding:20px}
+.card h2{font-family:"Baloo 2",sans-serif;margin:0 0 12px;font-size:22px}.card h2 span{font-size:14px;color:#6B544F}
+.row{display:flex;align-items:center;gap:16px;margin:10px 0}.mark{width:128px;height:128px}
+.dark{background:#3D2C29;border-radius:14px;padding:12px}.sizes img{display:block}.lock{width:100%;max-width:340px}
+.lbl{font-size:12px;color:#6B544F;text-transform:uppercase;letter-spacing:.05em;margin-top:14px}
+</style></head><body>
+<h1>Hagu logo options</h1><p class="sub">A = current (in the PR). Each option: mark on its own (no text), small sizes, dark background, and the wordmark lockup.</p>
+<div class="grid" id="g"></div>
+<script>
+const opts=[
+ ["A","Heart Controller (current)","img/logo.svg","img/logo-wordmark.svg"],
+ ["A2","Heart Controller — mono","img/logo-options/a2-mono.svg",null],
+ ["A3","Heart Controller — light lines for dark","img/logo-options/a3-reversed-lines.svg",null],
+ ["B","Hug Buddies","img/logo-options/b-hug-buddies.svg","img/logo-options/b-hug-buddies-wordmark.svg"],
+ ["C","Arcade Token","img/logo-options/c-arcade-token.svg","img/logo-options/c-arcade-token-wordmark.svg"],
+ ["D","Cartridge Pal","img/logo-options/d-cartridge-pal.svg","img/logo-options/d-cartridge-pal-wordmark.svg"],
+ ["E","H Monogram","img/logo-options/e-h-monogram.svg","img/logo-options/e-h-monogram-wordmark.svg"],
+ ["F","Hug Bear","img/logo-options/f-hug-bear.svg","img/logo-options/f-hug-bear-wordmark.svg"]];
+document.getElementById('g').innerHTML=opts.map(([k,n,m,w])=>`<div class="card"><h2>${k} <span>${n}</span></h2>
+<div class="lbl">Mark only — no text</div><div class="row"><img class="mark" src="${m}"><div class="dark"><img class="mark" src="${m}" style="width:96px;height:96px"></div></div>
+<div class="lbl">Small sizes (app icon / tab)</div><div class="row sizes"><img src="${m}" width="64"><img src="${m}" width="32"><img src="${m}" width="16"></div>
+${w?`<div class="lbl">With wordmark</div><img class="lock" src="${w}">`:''}</div>`).join('');
+</script></body></html>

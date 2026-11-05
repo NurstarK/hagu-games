@@ -76,9 +76,9 @@ const HAGU_GAMES = [
   },
   {
     slug: "tetropolis",
-    title: "Tetropolis",
-    jp: "テトロポリス",
-    blurb: "Tetris where the blocks are cities: merge cities into countries, clear whole continents.",
+    title: "Atlas Drop",
+    jp: "アトラスドロップ",
+    blurb: "A geography merge puzzle: drop city districts on the map, merge them into countries and clear whole continents.",
     tags: ["Puzzle", "Geography"],
     url: "https://nurstark.github.io/tetropolis/",
     repo: "https://github.com/NurstarK/tetropolis",
