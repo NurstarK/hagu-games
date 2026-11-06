@@ -80,8 +80,8 @@ const HAGU_GAMES = [
     jp: "アトラスドロップ",
     blurb: "A geography merge puzzle: drop city districts on the map, merge them into countries and clear whole continents.",
     tags: ["Puzzle", "Geography"],
-    url: "https://nurstark.github.io/tetropolis/",
-    repo: "https://github.com/NurstarK/tetropolis",
+    url: "https://nurstark.github.io/atlas-drop/",
+    repo: "https://github.com/NurstarK/atlas-drop",
     icon: null, // no icon asset; the card renders a city-tile emblem instead
     emoji: "🏙️",
     maker: "Nurstar",
