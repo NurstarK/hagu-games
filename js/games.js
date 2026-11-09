@@ -64,8 +64,8 @@ const HAGU_GAMES = [
   },
   {
     slug: "parrot-palm",
-    title: "Parrot Palm",
-    jp: "パロットパーム",
+    title: "Parrot Island",
+    jp: "パロットアイランド",
     blurb: "Feed your parrots palm seeds, collect rare map tiles and solve the treasure-map puzzle.",
     tags: ["Collect", "Puzzle"],
     url: "https://kodawari10.github.io/parrot-palm-play/",
