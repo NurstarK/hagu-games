@@ -14,7 +14,7 @@ hub where all of our browser games live, playable right on the page.
 | Kana Arcade 🎌 | Kodawari | [Kodawari10/kana-arcade-play](https://github.com/Kodawari10/kana-arcade-play) |
 | Puppy Pals 🐾 | Kodawari | [Kodawari10/puppy-pals-play](https://github.com/Kodawari10/puppy-pals-play) |
 | Coloring Book 🎨 | Kodawari | [Kodawari10/coloring-book-play](https://github.com/Kodawari10/coloring-book-play) |
-| Parrot Palm 🦜 | Kodawari | [Kodawari10/parrot-palm-play](https://github.com/Kodawari10/parrot-palm-play) |
+| Parrot Island 🦜 | Kodawari | [Kodawari10/parrot-palm-play](https://github.com/Kodawari10/parrot-palm-play) |
 | Atlas Drop 🏙️ | Nurstar | [NurstarK/atlas-drop](https://github.com/NurstarK/atlas-drop) |
 
 ## How it works
