@@ -16,8 +16,8 @@ const HAGU_GAMES = [
   },
   {
     slug: "jewel-dress",
-    title: "Jewel Dress",
-    jp: "ジュエルドレス",
+    title: "Kira Kira Closet",
+    jp: "キラキラクローゼット",
     blurb: "Design dresses, set real gemstones on them, and learn where each stone comes from.",
     tags: ["Dress-up", "Gems"],
     url: "https://kodawari10.github.io/jewel-dress-play/",
