@@ -10,7 +10,7 @@ hub where all of our browser games live, playable right on the page.
 | Game | Maker | Source |
 | --- | --- | --- |
 | Element Friends ✨ | Kodawari | [Kodawari10/element-friends-play](https://github.com/Kodawari10/element-friends-play) |
-| Jewel Dress 💎 | Kodawari | [Kodawari10/jewel-dress-play](https://github.com/Kodawari10/jewel-dress-play) |
+| Kira Kira Closet 💎 | Kodawari | [Kodawari10/jewel-dress-play](https://github.com/Kodawari10/jewel-dress-play) |
 | Kana Arcade 🎌 | Kodawari | [Kodawari10/kana-arcade-play](https://github.com/Kodawari10/kana-arcade-play) |
 | Puppy Pals 🐾 | Kodawari | [Kodawari10/puppy-pals-play](https://github.com/Kodawari10/puppy-pals-play) |
 | Coloring Book 🎨 | Kodawari | [Kodawari10/coloring-book-play](https://github.com/Kodawari10/coloring-book-play) |
