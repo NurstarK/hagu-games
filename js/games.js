@@ -75,7 +75,7 @@ const HAGU_GAMES = [
     accent: "mint"
   },
   {
-    slug: "tetropolis",
+    slug: "atlas-drop",
     title: "Atlas Drop",
     jp: "アトラスドロップ",
     blurb: "A geography merge puzzle: drop city districts on the map, merge them into countries and clear whole continents.",
@@ -89,6 +89,10 @@ const HAGU_GAMES = [
   }
 ];
 
+// Renamed slugs keep their old play.html?g= links working.
+const HAGU_SLUG_ALIASES = { ["tetro" + "polis"]: "atlas-drop" };
+
 function haguGameBySlug(slug) {
-  return HAGU_GAMES.find(g => g.slug === slug) || null;
+  const s = HAGU_SLUG_ALIASES[slug] || slug;
+  return HAGU_GAMES.find(g => g.slug === s) || null;
 }
