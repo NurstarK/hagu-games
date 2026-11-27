@@ -15,6 +15,7 @@ hub where all of our browser games live, playable right on the page.
 | Puppy Pals 🐾 | Kodawari | [Kodawari10/puppy-pals-play](https://github.com/Kodawari10/puppy-pals-play) |
 | Coloring Book 🎨 | Kodawari | [Kodawari10/coloring-book-play](https://github.com/Kodawari10/coloring-book-play) |
 | Parrot Island 🦜 | Kodawari | [Kodawari10/parrot-palm-play](https://github.com/Kodawari10/parrot-palm-play) |
+| Japanese Pocket Cards 🎴 | Kodawari | [Kodawari10/japanese-pocket-cards-play](https://github.com/Kodawari10/japanese-pocket-cards-play) |
 | Atlas Drop 🏙️ | Nurstar | [NurstarK/atlas-drop](https://github.com/NurstarK/atlas-drop) |
 
 ## How it works

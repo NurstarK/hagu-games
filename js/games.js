@@ -75,6 +75,18 @@ const HAGU_GAMES = [
     accent: "mint"
   },
   {
+    slug: "japanese-pocket-cards",
+    title: "Japanese Pocket Cards",
+    jp: "にほんごカード",
+    blurb: "Kawaii pocket flash cards of useful Japanese words and travel phrases.",
+    tags: ["Learn JP", "Travel"],
+    url: "https://kodawari10.github.io/japanese-pocket-cards-play/",
+    repo: "https://github.com/Kodawari10/japanese-pocket-cards-play",
+    icon: "https://kodawari10.github.io/japanese-pocket-cards-play/icons/icon-512.png",
+    maker: "Kodawari",
+    accent: "sky"
+  },
+  {
     slug: "atlas-drop",
     title: "Atlas Drop",
     jp: "アトラスドロップ",
